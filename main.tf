@@ -16,6 +16,6 @@ terraform {
 }
 
 provider "google" {
-  region  = "us-west3"
-  project = "ddm-platform"
+  region  = var.default_region
+  project = var.default_project
 }

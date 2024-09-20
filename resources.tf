@@ -15,3 +15,11 @@ resource "github_repository" "bsides24" {
 
   visibility = "public"
 }
+
+resource "github_branch_protection" "bsides24_main" {
+  repository_id          = github_repository.bsides24.id
+  pattern                = "main"
+  enforce_admins         = true
+  allows_deletions       = true
+  require_signed_commits = true
+}
